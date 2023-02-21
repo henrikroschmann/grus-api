@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>    
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Grus</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Grus.Application\Grus.Application.csproj" />
+    <ProjectReference Include="..\Grus.Contracts\Grus.Contracts.csproj" />
+    <ProjectReference Include="..\Grus.Infrastructure\Grus.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
