@@ -8,9 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MongoDB.Bson" Version="2.18.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Grus.Contracts\Grus.Contracts.csproj" />
     <ProjectReference Include="..\Grus.Domain\Grus.Domain.csproj" />
   </ItemGroup>
 

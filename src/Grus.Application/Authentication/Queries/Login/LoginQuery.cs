@@ -1,6 +1,4 @@
-﻿using ErrorOr;
-using Grus.Application.Authentication.Common;
-using MediatR;
+﻿using Grus.Application.Authentication.Common;
 
 namespace Grus.Application.Authentication.Queries.Login;
 

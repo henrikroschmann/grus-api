@@ -1,10 +1,7 @@
-﻿using ErrorOr;
-using Grus.Application.Authentication.Common;
+﻿using Grus.Application.Authentication.Common;
 using Grus.Application.Common.Interfaces.Authentication;
-using Grus.Application.Common.Interfaces.Persistence;
 using Grus.Domain.Common.Errors;
 using Grus.Domain.Entities.User;
-using MediatR;
 
 namespace Grus.Application.Authentication.Command.Register;
 

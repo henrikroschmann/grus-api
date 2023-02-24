@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grus.api", "Grus-api\Grus.api.csproj", "{861428FC-6CBB-4EC0-BFB1-359AAC8F423F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grus.API", "Grus-api\Grus.API.csproj", "{861428FC-6CBB-4EC0-BFB1-359AAC8F423F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grus.Application", "Grus.Application\Grus.Application.csproj", "{541187D5-8A06-4589-BF23-1F4B119536B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grus.Application", "Grus.Application\Grus.Application.csproj", "{541187D5-8A06-4589-BF23-1F4B119536B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grus.Contracts", "Grus.Contracts\Grus.Contracts.csproj", "{76E13B6F-FCDB-40E2-B1F7-26EDB71400DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grus.Contracts", "Grus.Contracts\Grus.Contracts.csproj", "{76E13B6F-FCDB-40E2-B1F7-26EDB71400DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grus.Domain", "Grus.Domain\Grus.Domain.csproj", "{2EDB74BD-D06D-4BBE-807C-A6FF5480DB60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grus.Domain", "Grus.Domain\Grus.Domain.csproj", "{2EDB74BD-D06D-4BBE-807C-A6FF5480DB60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grus.Infrastructure", "Grus.Infrastructure\Grus.Infrastructure.csproj", "{EC6783B6-1695-49A6-9F75-57118858D1C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grus.Infrastructure", "Grus.Infrastructure\Grus.Infrastructure.csproj", "{EC6783B6-1695-49A6-9F75-57118858D1C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

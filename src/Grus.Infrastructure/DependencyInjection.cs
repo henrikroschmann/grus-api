@@ -1,4 +1,6 @@
-﻿namespace Grus.Infrastructure;
+﻿using Grus.Infrastructure.Persistence.Budget;
+
+namespace Grus.Infrastructure;
 
 public static class DependencyInjection
 {
@@ -15,6 +17,7 @@ public static class DependencyInjection
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IBudgetRepository, BudgetRepository>();
         return services;
     }
 

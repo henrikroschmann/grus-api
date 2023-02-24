@@ -1,6 +1,6 @@
 namespace Grus.Controllers;
 
-[Route("auth")]
+[Route("api/auth")]
 public class AuthenticationController : ApiController
 {
     private readonly ISender _mediator;
