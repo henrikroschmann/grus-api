@@ -9,11 +9,13 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IUserRepository _userRepository;
+    private readonly IUserProfileRepository _userProfileRepository;
 
-    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
+    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository, IUserProfileRepository userProfileRepository)
     {
         _userRepository = userRepository;
         _jwtTokenGenerator = jwtTokenGenerator;
+        _userProfileRepository = userProfileRepository;
     }
 
     public async Task<ErrorOr<AuthenticationResult>> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -23,8 +25,8 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
         {
             return Errors.User.DuplicateEmail;
         }
-        // create user (generate unique ID)
 
+        // create user (generate unique ID)
         var user = new User
         {
             Email = request.Email,
@@ -33,7 +35,16 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
 
         await _userRepository.Add(user);
 
-        //create JWT Token
+        // create user profile
+        var userProfile = new UserProfile
+        {
+            Id = user.Id,
+            Email = user.Email
+        };
+
+        await _userProfileRepository.Add(userProfile);
+
+        // create JWT Token
         var token = _jwtTokenGenerator.GenerateToken(user);
 
         return new AuthenticationResult(user, token);

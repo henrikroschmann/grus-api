@@ -1,4 +1,7 @@
-﻿namespace Grus.Infrastructure.Services;
+﻿using Grus.Domain.Entities.Budget;
+using Grus.Domain.Entities.User;
+
+namespace Grus.Infrastructure.Services;
 
 public class MongoDbContext
 {
@@ -6,11 +9,19 @@ public class MongoDbContext
 
     public MongoDbContext(IConfiguration configuration)
     {
-        var client = new MongoClient(configuration.GetConnectionString("MongoDb"));
+        if (configuration == null)
+        {
+            throw new ArgumentNullException(nameof(configuration));
+        }
+
+        var mongoDB = configuration.GetSection("MongoDb");
+        var mongoConfigs = mongoDB.GetChildren().ToList();
+
+        var client = new MongoClient(mongoConfigs.FirstOrDefault(x => x.Key == "ConnectionString")?.Value);
         _database = client.GetDatabase(configuration["MongoDb:Database"]);
     }
 
-    //public IMongoCollection<StockEntity> Stocks => _database.GetCollection<StockEntity>("Stocks");
-    //public IMongoCollection<PortfolioEntity> PortfolioStocks => _database.GetCollection<PortfolioEntity>("PortfolioStocks");
-    public IMongoCollection<string> Symbols => _database.GetCollection<string>("Symbols");
+    public IMongoCollection<Budget> Budgets => _database.GetCollection<Budget>("Budgets");
+    public IMongoCollection<UserProfile> UserProfiles => _database.GetCollection<UserProfile>("UserProfiles");
+    public IMongoCollection<User> User => _database.GetCollection<User>("users");
 }

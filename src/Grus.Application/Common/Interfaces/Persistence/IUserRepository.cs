@@ -2,9 +2,9 @@
 
 namespace Grus.Application.Common.Interfaces.Persistence;
 
-public interface IUserRepository
+public interface IUserProfileRepository
 {
-    Task<User?> GetByEmail(string Email);
+    Task<UserProfile?> GetById(Guid id);
 
-    Task Add(User user);
+    Task Add(UserProfile userProfile);
 }

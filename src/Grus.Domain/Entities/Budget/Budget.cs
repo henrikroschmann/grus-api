@@ -1,65 +1,26 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using HotChocolate.Types;
 
 namespace Grus.Domain.Entities.Budget;
 
 public class Budget
 {
-    public Budget(Guid? Id,
-        Guid? UserId,
-        List<BudgetItem> Items,
-        DateTime CreatedAt)
-    {
-        this.Id = Id;
-        this.UserId = UserId;
-        this.Items = Items;
-        this.CreatedAt = CreatedAt;
-    }
-
-    public Guid? Id { get; init; }
-    public Guid? UserId { get; init; }
-
-    [BsonSerializer(typeof(BudgetItemsSerializer))]
-    public List<BudgetItem> Items { get; init; }
-
-    public DateTime CreatedAt { get; init; }
-
-    public void Deconstruct(out Guid? Id, out Guid? UserId, out List<BudgetItem> Items, out DateTime CreatedAt)
-    {
-        Id = this.Id;
-        UserId = this.UserId;
-        Items = this.Items;
-        CreatedAt = this.CreatedAt;
-    }
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public DateTime Date { get; set; }
+    public List<Income> Incomes { get; set; }
+    public List<Expense> Expenses { get; set; }
+    public List<Saving> Savings { get; set; }
 }
 
-public abstract class BudgetItem
+public class BudgetType : ObjectType<Budget>
 {
-    protected BudgetItem(string Name,
-        decimal Amount,
-        BudgetItemType Type)
+    protected override void Configure(IObjectTypeDescriptor<Budget> descriptor)
     {
-        this.Name = Name;
-        this.Amount = Amount;
-        this.Type = Type;
+        descriptor.Field(t => t.Id).Type<NonNullType<IdType>>();
+        descriptor.Field(t => t.Name).Type<StringType>();
+        descriptor.Field(t => t.Date).Type<DateType>();
+        descriptor.Field(t => t.Incomes).Type<ListType<IncomeType>>();
+        descriptor.Field(t => t.Expenses).Type<ListType<ExpenseType>>();
+        descriptor.Field(t => t.Savings).Type<ListType<SavingsType>>();
     }
-
-    public string Name { get; init; }
-    public decimal Amount { get; init; }
-    public BudgetItemType Type { get; init; }
-
-    public void Deconstruct(out string Name, out decimal Amount, out BudgetItemType Type)
-    {
-        Name = this.Name;
-        Amount = this.Amount;
-        Type = this.Type;
-    }
-}
-
-public enum BudgetItemType
-{
-    Income,
-    Bill,
-    Savings,
-    Subscription,
-    Loan
 }

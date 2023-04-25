@@ -1,5 +1,6 @@
 ﻿using ErrorOr;
 using Grus.Common.Http;
+using Error = ErrorOr.Error;
 
 namespace Grus.Controllers;
 

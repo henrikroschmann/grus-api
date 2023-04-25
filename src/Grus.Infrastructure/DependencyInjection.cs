@@ -1,4 +1,4 @@
-﻿using Grus.Infrastructure.Persistence.Budget;
+﻿using Grus.Infrastructure.Persistence.UserProfile;
 
 namespace Grus.Infrastructure;
 
@@ -16,8 +16,10 @@ public static class DependencyInjection
         services.AddAuth(configuration);
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
+        services.AddHttpContextAccessor();
+        services.AddScoped<MongoDbContext>();
         services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IBudgetRepository, BudgetRepository>();
+        services.AddScoped<IUserProfileRepository, UserProfileRepository>();
         return services;
     }
 
