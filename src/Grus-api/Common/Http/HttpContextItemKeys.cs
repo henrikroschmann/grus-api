@@ -1,4 +1,4 @@
-﻿namespace Grus.Common.Http;
+﻿namespace Grus.API.Common.Http;
 
 public static class HttpContextItemKeys
 {

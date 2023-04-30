@@ -9,7 +9,6 @@
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.2.1" />
     <PackageReference Include="HotChocolate.Types" Version="13.0.5" />
-    <PackageReference Include="MongoDB.Bson" Version="2.19.1" />
   </ItemGroup>
 
 </Project>

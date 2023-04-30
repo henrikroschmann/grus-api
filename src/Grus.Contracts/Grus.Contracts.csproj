@@ -10,9 +10,5 @@
     <PackageReference Include="ErrorOr" Version="1.2.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Grus.Domain\Grus.Domain.csproj" />
-  </ItemGroup>
-
 
 </Project>

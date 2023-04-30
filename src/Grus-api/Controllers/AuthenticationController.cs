@@ -1,6 +1,6 @@
 using Grus.Application.Authentication.Queries.Login;
 
-namespace Grus.Controllers;
+namespace Grus.API.Controllers;
 
 [Route("api/auth")]
 public class AuthenticationController : ApiController

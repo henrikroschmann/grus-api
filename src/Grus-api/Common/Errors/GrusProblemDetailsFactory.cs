@@ -1,12 +1,12 @@
 ﻿using ErrorOr;
-using Grus.Common.Http;
+using Grus.API.Common.Http;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
 using Error = ErrorOr.Error;
 
-namespace Grus.Common.Errors;
+namespace Grus.API.Common.Errors;
 
 public class GrusProblemDetailsFactory : ProblemDetailsFactory
 {

@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
-using Grus.Common.Http;
+using Grus.API.Common.Http;
 using Error = ErrorOr.Error;
 
-namespace Grus.Controllers;
+namespace Grus.API.Controllers;
 
 [ApiController]
 public class ApiController : ControllerBase

@@ -1,7 +1,7 @@
 ﻿using Grus.Application.Common.Errors;
 using Microsoft.AspNetCore.Diagnostics;
 
-namespace Grus.Controllers;
+namespace Grus.API.Controllers;
 
 public class ErrorsController : ControllerBase
 {
